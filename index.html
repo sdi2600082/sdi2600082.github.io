@@ -1,1 +1,101 @@
 <h1>Hello</h1>
+
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>sdi2600082</title>
+<style>
+  :root {
+    --bg: #f3eefb;
+    --ink: #26123f;
+    --accent: #7a3fc9;
+    --head: #4a1f8c;
+    --card: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1a0f2e;
+      --ink: #f1eaff;
+      --accent: #b78cff;
+      --head: #2b1650;
+      --card: #281846;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.6;
+  }
+  header {
+    background: var(--head);
+    color: #ffffff;
+    padding: 56px 20px 48px;
+  }
+  header div, main { max-width: 680px; margin: 0 auto; }
+  h1 { margin: 0 0 8px; font-size: 2.4rem; }
+  header p { margin: 0; font-size: 1.1rem; }
+  main { padding: 32px 20px 64px; }
+  h2 { color: var(--accent); margin-top: 40px; }
+  .box {
+    background: var(--card);
+    border-left: 6px solid var(--accent);
+    padding: 20px;
+    border-radius: 6px;
+  }
+  button {
+    font-size: 1.1rem;
+    padding: 10px 18px;
+    border: 0;
+    border-radius: 6px;
+    background: var(--accent);
+    color: #ffffff;
+    cursor: pointer;
+  }
+  button:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
+  #msg { margin-top: 14px; font-size: 1.2rem; min-height: 1.6em; }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>Γεια! Είμαι η sdi2600082</h1>
+    <p>Φοιτήτρια, μαθαίνω προγραμματισμό. Αυτή είναι η πρώτη μου ιστοσελίδα στο GitHub Pages.</p>
+  </div>
+</header>
+
+<main>
+  <h2>Για εμένα</h2>
+  <p>Στο μάθημα Εισαγωγή στον Προγραμματισμό γράφω προγράμματα σε C.
+     Η πρώτη άσκηση ήταν να φτιάξω αυτή τη σελίδα.</p>
+
+  <h2>Πάτα το κουμπί</h2>
+  <div class="box">
+    <button onclick="newMessage()">Πάτα με</button>
+    <div id="msg"></div>
+  </div>
+
+  <h2>Σύνδεσμοι</h2>
+  <p><a href="https://github.com/sdi2600082">Το προφίλ μου στο GitHub</a></p>
+</main>
+
+<script>
+  var messages = [
+    "Η πρώτη μου σελίδα είναι live!",
+    "Κάθε πρόγραμμα ξεκινά με ένα Hello World.",
+    "Τα λάθη μας διδάσκουν περισσότερα από τα σωστά.",
+    "Τώρα ξέρω να φτιάχνω URL στο διαδίκτυο!"
+  ];
+
+  function newMessage() {
+    var i = Math.floor(Math.random() * messages.length);
+    document.getElementById("msg").textContent = messages[i];
+  }
+</script>
+</body>
+</html>
